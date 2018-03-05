@@ -1,7 +1,7 @@
 var pic = document.getElementById("vimage");
 var started = false;
-var newX = 250;
-var newY = 250;
+var newX = 0;
+var newY = 0;
 var size = 100;
 var changeX = 1;
 var changeY = 1;
@@ -32,15 +32,15 @@ var dvds = function(e) {
 
 var dvd = function(e) {
     var i = document.createElementNS(
-	"http://w3.org/2000/svg",
+	"http://www.w3.org/2000/svg",
 	"image"
     );
     clearRect();
     
-    if (newX >= 600 - 100) {
+    if (newX >= 500 - 100) {
 	changeX = -1 * Math.floor(Math.random() * 2);
     }
-    if (newY >= 600 - 50) {
+    if (newY >= 500 - 50) {
 	changeY = -1 * Math.floor(Math.random() * 2);
     }
     if (newX <= 0) {
@@ -49,7 +49,7 @@ var dvd = function(e) {
     if (newY <= 0) {
 	changeY = Math.floor(Math.random() * 2);
     }
-    i.setAttribute("xlink:href", "dvd.png");
+    i.setAttribute("href", "dvd.png");
     i.setAttribute("x", newX);
     i.setAttribute("y", newY);
     i.setAttribute("height", 50);
